@@ -1,6 +1,7 @@
 package ru.aplana.ReadFile;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -49,7 +50,8 @@ public class WordSearch {
 		}
 	}
 	
-	public List<String> returnList(BufferedReader reader) throws IOException{
+	public List<String> returnList(FileReader file) throws IOException{
+		BufferedReader reader = new BufferedReader(file);
 		ArrayList<String> list = new ArrayList<>();
 		String line;
 		while((line = reader.readLine())!=null) {

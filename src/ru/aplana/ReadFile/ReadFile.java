@@ -15,20 +15,14 @@ public class ReadFile {
 	public static void main(String[] args) {
 		
 		String path = "text.txt";
-		
 		WordSearch search = new WordSearch();
-		
 		List<String> list = new ArrayList<>();
 		
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader(path));
-			
-			list = search.returnList(reader);
+			list = search.returnList(new FileReader(path));
 			search.forList(list);
 			System.out.println("\n");
-			
 			search.searchWord(list);
-			
 			search.maxWord(list);
 		} catch (FileNotFoundException e) {
 
