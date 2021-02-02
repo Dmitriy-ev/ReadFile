@@ -1,13 +1,9 @@
 package ru.aplana.ReadFile;
 
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class ReadFile {
@@ -17,7 +13,7 @@ public class ReadFile {
 		String path = "text.txt";
 		WordSearch search = new WordSearch();
 		List<String> list = new ArrayList<>();
-		
+
 		try {
 			list = search.returnList(new FileReader(path));
 			search.forList(list);
