@@ -1,49 +1,15 @@
 package ru.aplana.ReadFile;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 public class ReadFile {
 
 	public static void main(String[] args) {
 		
 		String path = "text.txt";
 		WordSearch search = new WordSearch();
-		List<String> list = new ArrayList<>();
-
-		try {
-			list = search.returnList(new FileReader(path));
-			search.forList(list);
-			System.out.println("\n");
-			search.searchWord(list);
-			search.maxWord(list);
-		} catch (FileNotFoundException e) {
-
-			e.printStackTrace();
-		
-		} catch (UnsupportedOperationException e) {
-
-			e.printStackTrace();
-		
-		} catch (NullPointerException e) {
-			
-			e.printStackTrace();
-		
-		}catch (ArrayIndexOutOfBoundsException e) {
-
-			e.printStackTrace();
-			
-		}catch (IOException e) {
-			
-			e.printStackTrace();
-			
-		}catch (Exception e) {
-
-			e.printStackTrace();
-			
+		search.forList(search.returnList(path));
+		System.out.println("\n");
+		search.searchWord(search.returnList(path));
+		search.maxWord(search.returnList(path));
 		}
 	}
-}
+
